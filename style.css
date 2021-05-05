@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Source+Serif+Pro:ital@0;1&display=swap');
+
+body{
+  margin: 0;
+}
+
+.profileContainer{
+  box-sizing: border-box;
+  display: flex;
+  font-size: 12px;
+  margin: 1em 0px;
+  padding: 15px;
+  border:5px solid rgba(0, 0, 0, 0);
+  max-height: 23vw;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.headshot{
+  width: 20.5vw;
+  height: 20.5vw;
+  margin-right: 30px;
+}
+
+.left{
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.subhead{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 2.6em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.dividingLine{
+  border-top: 5px solid #393939;
+  margin: 20px auto;
+  width: 100%;
+}
+
+p{
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.5em;
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+.expandButton{
+  margin-top: -15px;
+  color: #b12d27;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.profileBlurb > p:first-child::first-letter {
+    float: left;
+    color: #000000;
+    font-size: 92px;
+    line-height: 75px;
+    padding-top: 9px;
+    padding-right: 8px;
+    padding-left: 3px;
+    font-family: 'Gilda Display';
+}
+
+.collapsed{
+  display: inline;
+  transition: opacity 0.5s;
+}
+
+.expanded{
+  display: none;
+}
+
+.expandedGraf{
+  display: none;
+}
