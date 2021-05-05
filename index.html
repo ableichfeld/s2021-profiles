@@ -7,8 +7,12 @@
   </head>
   <body>
     <div class="profileContainer yeung">
-      <img class="headshot illustrLeft" id="yeungHeadshotIllustration" src="images/yeung-illustration.png" alt="A drawng of a young Asian woman with glasses smiling at the camera">
-      <img class="HSphoto headshot yeung photoLeft" id="yeungHeadshot" src="images/yeung.jpg" alt="A young Asian woman with glasses smiles at the camera">
+      <div class="headshotContainer">
+        <img class="headshot illustrLeft" id="yeungHeadshotIllustration" src="images/yeung-illustration.png" alt="A drawng of a young Asian woman with glasses smiling at the camera">
+        <img class="HSphoto headshot yeung photoLeft" id="yeungHeadshot" src="images/yeung.jpg" alt="A young Asian woman with glasses smiles at the camera">
+        <p class="illustrCredit yeung">Illustration by Avery Bleichfeld</p>
+        <p class="photoCredit yeung">Photo courtesy Grace Yeung</p>
+      </div>
       <div class="profileText">
         <h2 class="subhead">Subheader goes here</h2>
         <div class="dividingLine"></div>
@@ -56,12 +60,20 @@
           <p class="expandButton benitez" onclick="benitezExpand()"><span class="pointer">Read more</span></p>
         </div>
       </div>
-      <img class="headshot illustrRight illus" id="benitezHeadshotIllustration" src="images/yeung-illustration.png" alt="A drawng of a young Asian woman with glasses smiling at the camera">
-      <img class="headshot HSphoto benitez photoRight" id="benitezHeadshot" src="images/yeung.jpg" alt="A young Asian woman with glasses smiles at the camera">
+      <div class="headshotContainer">
+        <img class="headshot illustrRight illus" id="benitezHeadshotIllustration" src="images/yeung-illustration.png" alt="A drawng of a young Asian woman with glasses smiling at the camera">
+        <img class="headshot HSphoto benitez photoRight" id="benitezHeadshot" src="images/yeung.jpg" alt="A young Asian woman with glasses smiles at the camera">
+        <p class="illustrCredit benitez">Illustration by Avery Bleichfeld</p>
+        <p class="photoCredit benitez">Photo courtesy Grace Yeung</p>
+      </div>
     </div><div class="spacer"></div>
     <div class="profileContainer blasingame">
-      <img class="headshot illustrLeft" id="blasingameHeadshotIllustration" src="images/yeung-illustration.png" alt="A drawng of a young Asian woman with glasses smiling at the camera">
-      <img class="HSphoto headshot blasingame photoLeft" id="blasingameHeadshot" src="images/yeung.jpg" alt="A young Asian woman with glasses smiles at the camera">
+      <div class="headshotContainer">
+        <img class="headshot illustrLeft" id="blasingameHeadshotIllustration" src="images/yeung-illustration.png" alt="A drawng of a young Asian woman with glasses smiling at the camera">
+        <img class="HSphoto headshot blasingame photoLeft" id="blasingameHeadshot" src="images/yeung.jpg" alt="A young Asian woman with glasses smiles at the camera">
+        <p class="illustrCredit blasingame">Illustration by Avery Bleichfeld</p>
+        <p class="photoCredit blasingame">Photo courtesy Grace Yeung</p>
+      </div>
       <div class="profileText">
         <h2 class="subhead">Subheader goes here</h2>
         <div class="dividingLine"></div>
@@ -91,6 +103,8 @@
           var exButton = document.getElementsByClassName("expandButton");
           var expand = document.getElementsByClassName("expandedGraf");
           var collapse = document.getElementsByClassName("collapsed");
+          var illustrCredit = document.getElementsByClassName("illustrCredit");
+          var photoCredit = document.getElementsByClassName("photoCredit");
           var background = document.getElementsByClassName("profileContainer");
           var i;
 
@@ -131,6 +145,22 @@
             }
           }
 
+          //Makes the caption switch from illustration to photo
+          for (i = 0; i < illustrCredit.length; i++){
+            if (illustrCredit[i].classList.contains('yeung')){
+              illustrCredit[i].style.display = "none";
+            } else {
+              illustrCredit[i].style.display = "block";
+            }
+          }
+          for (i = 0; i < photoCredit.length; i++){
+            if (photoCredit[i].classList.contains('yeung')){
+              photoCredit[i].style.display = "block";
+            } else {
+              photoCredit[i].style.display = "none";
+            }
+          }
+
           //Makes the background grey and draws the border
           for (i = 0; i < background.length; i++){
             if (background[i].classList.contains('yeung')){
@@ -146,10 +176,12 @@
 
           //Create variables for the for set of for loops to work with.
           //For each of the loops, the if statement has no else clause because I'm figuring that clicking the collapse button should only apply to the one that is active (which is the only open one).
-          var headshot = document.getElementsByClassName("headshot");
+          var headshot = document.getElementsByClassName("HSphoto");
           var exButton = document.getElementsByClassName("expandButton");
           var expand = document.getElementsByClassName("expandedGraf");
           var collapse = document.getElementsByClassName("collapsed");
+          var illustrCredit = document.getElementsByClassName("illustrCredit");
+          var photoCredit = document.getElementsByClassName("photoCredit");
           var background = document.getElementsByClassName("profileContainer");
           var i;
 
@@ -181,6 +213,18 @@
             }
           }
 
+          //Makes the caption switch from photo to illustration
+          for (i = 0; i < illustrCredit.length; i++){
+            if (illustrCredit[i].classList.contains('yeung')){
+              illustrCredit[i].style.display = "block";
+            }
+          }
+          for (i = 0; i < photoCredit.length; i++){
+            if (photoCredit[i].classList.contains('yeung')){
+              photoCredit[i].style.display = "none";
+            }
+          }
+
           //Makes the background white and makes the border disappear
           for (i = 0; i < background.length; i++){
             if (background[i].classList.contains('yeung')){
@@ -203,6 +247,8 @@
           var exButton = document.getElementsByClassName("expandButton");
           var expand = document.getElementsByClassName("expandedGraf");
           var collapse = document.getElementsByClassName("collapsed");
+          var illustrCredit = document.getElementsByClassName("illustrCredit");
+          var photoCredit = document.getElementsByClassName("photoCredit");
           var background = document.getElementsByClassName("profileContainer");
           var i;
 
@@ -242,6 +288,22 @@
             }
           }
 
+          //Makes the caption switch from illustration to photo
+          for (i = 0; i < illustrCredit.length; i++){
+            if (illustrCredit[i].classList.contains('benitez')){
+              illustrCredit[i].style.display = "none";
+            } else {
+              illustrCredit[i].style.display = "block";
+            }
+          }
+          for (i = 0; i < photoCredit.length; i++){
+            if (photoCredit[i].classList.contains('benitez')){
+              photoCredit[i].style.display = "block";
+            } else {
+              photoCredit[i].style.display = "none";
+            }
+          }
+
           //Makes the background grey and draws the border
           for (i = 0; i < background.length; i++){
             if (background[i].classList.contains('benitez')){
@@ -261,6 +323,8 @@
           var exButton = document.getElementsByClassName("expandButton");
           var expand = document.getElementsByClassName("expandedGraf");
           var collapse = document.getElementsByClassName("collapsed");
+          var illustrCredit = document.getElementsByClassName("illustrCredit");
+          var photoCredit = document.getElementsByClassName("photoCredit");
           var background = document.getElementsByClassName("profileContainer");
           var i;
 
@@ -289,6 +353,18 @@
           for (i = 0; i < collapse.length; i++){
             if (collapse[i].classList.contains('benitez')){
               collapse[i].style.opacity = "1";
+            }
+          }
+
+          //Makes the caption switch from photo to illustration
+          for (i = 0; i < illustrCredit.length; i++){
+            if (illustrCredit[i].classList.contains('benitez')){
+              illustrCredit[i].style.display = "block";
+            }
+          }
+          for (i = 0; i < photoCredit.length; i++){
+            if (photoCredit[i].classList.contains('benitez')){
+              photoCredit[i].style.display = "none";
             }
           }
 
@@ -314,6 +390,8 @@
           var exButton = document.getElementsByClassName("expandButton");
           var expand = document.getElementsByClassName("expandedGraf");
           var collapse = document.getElementsByClassName("collapsed");
+          var illustrCredit = document.getElementsByClassName("illustrCredit");
+          var photoCredit = document.getElementsByClassName("photoCredit");
           var background = document.getElementsByClassName("profileContainer");
           var i;
 
@@ -353,6 +431,22 @@
             }
           }
 
+          //Makes the caption switch from illustration to photo
+          for (i = 0; i < illustrCredit.length; i++){
+            if (illustrCredit[i].classList.contains('blasingame')){
+              illustrCredit[i].style.display = "none";
+            } else {
+              illustrCredit[i].style.display = "block";
+            }
+          }
+          for (i = 0; i < photoCredit.length; i++){
+            if (photoCredit[i].classList.contains('blasingame')){
+              photoCredit[i].style.display = "block";
+            } else {
+              photoCredit[i].style.display = "none";
+            }
+          }
+
           //Makes the background grey and draws the border
           for (i = 0; i < background.length; i++){
             if (background[i].classList.contains('blasingame')){
@@ -372,6 +466,8 @@
           var exButton = document.getElementsByClassName("expandButton");
           var expand = document.getElementsByClassName("expandedGraf");
           var collapse = document.getElementsByClassName("collapsed");
+          var illustrCredit = document.getElementsByClassName("illustrCredit");
+          var photoCredit = document.getElementsByClassName("photoCredit");
           var background = document.getElementsByClassName("profileContainer");
           var i;
 
@@ -400,6 +496,18 @@
           for (i = 0; i < collapse.length; i++){
             if (collapse[i].classList.contains('blasingame')){
               collapse[i].style.opacity = "1";
+            }
+          }
+
+          //Makes the caption switch from photo to illustration
+          for (i = 0; i < illustrCredit.length; i++){
+            if (illustrCredit[i].classList.contains('blasingame')){
+              illustrCredit[i].style.display = "block";
+            }
+          }
+          for (i = 0; i < photoCredit.length; i++){
+            if (photoCredit[i].classList.contains('blasingame')){
+              photoCredit[i].style.display = "none";
             }
           }
 

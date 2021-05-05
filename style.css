@@ -31,13 +31,14 @@ body{
 
 .photoLeft{
   position: absolute;
+  left: 20px;
   opacity: 0;
   transition: opacity 1s;
 }
 
 .photoRight{
   position: absolute;
-  right: 15px;
+  right: 20px;
   opacity: 0;
   transition: opacity 1s;
 }
@@ -106,4 +107,17 @@ iframe{
 .spacer{
   width: 100%;
   height: 50px;
+}
+
+.illustrCredit{
+  font-size: 14px;
+  line-height: 20px;
+  margin: 5px 10px 10px;
+}
+
+.photoCredit{
+  font-size: 14px;
+  line-height: 20px;
+  margin: 5px 10px 10px;
+  display: none;
 }
