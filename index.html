@@ -8,7 +8,7 @@
   <body>
     <div class="profileContainer yeung">
       <img class="headshot" id="yeungHeadshotIllustration" src="images/yeung-illustration.png" alt="A drawng of a young Asian woman with glasses smiling at the camera">
-      <img class="headshot left" id="yeungHeadshot" src="images/yeung.jpg" alt="A young Asian woman with glasses smiles at the camera">
+      <img class="HSphoto headshot yeung left" id="yeungHeadshot" src="images/yeung.jpg" alt="A young Asian woman with glasses smiles at the camera">
       <div class="profileText">
         <h2 class="subhead">Subheader goes here</h2>
         <div class="dividingLine"></div>
@@ -28,76 +28,256 @@
           <p class="expandedGraf yeung">“I’ve had those experiences, so I can stand up for myself in the future again, but also, I can help other women, other minorities to stand up for themselves,” she said. </p>
           <p class="expandedGraf yeung">Yeung encourages her fellow graduates to dedicate themselves to making lasting change wherever their careers take them.</p>
           <p class="expandedGraf yeung">“It’s not about me anymore,” she said. “It’s about who I can empower and bring up with me so that they can also find their voice and so that they can also feel heard and seen at work, at school and beyond.”</p>
-          <p class="expandButton" id="yeungExpand" onclick="yeungExpand()"><span class="pointer">Read more</span></p>
+          <p class="expandButton yeung" onclick="yeungExpand()"><span class="pointer">Read more</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="profileContainer benitez">
+      <img class="headshot" id="benitezHeadshotIllustration" src="images/yeung-illustration.png" alt="A drawng of a young Asian woman with glasses smiling at the camera">
+      <img class="headshot HSphoto benitez left" id="benitezHeadshot" src="images/yeung.jpg" alt="A young Asian woman with glasses smiles at the camera">
+      <div class="profileText">
+        <h2 class="subhead">Subheader goes here</h2>
+        <div class="dividingLine"></div>
+        <div class="profileBlurb">
+          <p>Grace Yeung spent her four years at Northeastern finding her voice, and she intends to use it to change the corporate world for the better.</p>
+          <p>A first generation college student, Yeung will be graduating with a degree in business administration with a concentration in marketing and will be moving to San Francisco to work in product management at the software company Salesforce.</p>
+          <p>“Within the last four years, I think I’m most proud of the fact that I never waited for permission, so to say, to chase after opportunities, whether it was leadership on campus, campus jobs, co-ops or internships and even off-campus opportunities,” she said.  “I never waited for permission, I just chased after it.”<span class="collapsed benitez">...</span></p>
+          <p class="expandedGraf benitez">After facing rejection after rejection from marketing co-ops, Yeung broadened her search and landed a product management position at GE Lighting, where she was able to work with people from different parts of the company as she managed new products from their early development to their launch and every step in between. </p>
+          <p class="expandedGraf benitez">She found that other product management co-op options were limited, so she leveraged her network on LinkedIn to land a summer internship at Salesforce, which she parlayed into a full-time job.</p>
+          <p class="expandedGraf benitez">Yeung noticed a lack of community and resources for students trying to break into product management, so she started Product Buds, one of the fastest growing virtual product management communities. Product Buds aims to connect students interested in product management with each other and with professionals well-versed in the field. It all began when Yeung made a LinkedIn post offering virtual coffee chats to people looking to break into product management.</p>
+          <p class="expandedGraf benitez">Today, Product Buds has over 5,000 members from 23 countries, less than a year after its founding last May. They host virtual guest speakers, events, mock interviews and even a book club. </p>
+          <p class="expandedGraf benitez">Yeung noted that graduating college in 2021 presents unique challenges, especially for Asian Americans like Yeung, with anti-Asian hate crimes up 169% in the first quarter of 2021, according to a report by the Center for the Study of Hate & Extremism at California State University, San Bernardino.</p>
+          <p class="expandedGraf benitez">“In the corporate world, there’s the glass ceiling, whether it’s in technology or entrepreneurship or in the media. But also, there’s a bamboo ceiling. Asian women face both,” she said. “And I am so scared that I am going to have to fight so hard to be heard in workplaces to be promoted and to be paid fairly.”</p>
+          <p class="expandedGraf benitez">Yeung learned to advocate for herself in the workplace during her co-op and internships, and says she now feels more confident speaking up in the workplace.</p>
+          <p class="expandedGraf benitez">“The silver lining in all this is I have a voice,” she said.</p>
+          <p class="expandedGraf benitez">And she is not afraid to use it to help not only herself, but other underrepresented people entering the tech industry and the corporate world in general.</p>
+          <p class="expandedGraf benitez">“I’ve had those experiences, so I can stand up for myself in the future again, but also, I can help other women, other minorities to stand up for themselves,” she said. </p>
+          <p class="expandedGraf benitez">Yeung encourages her fellow graduates to dedicate themselves to making lasting change wherever their careers take them.</p>
+          <p class="expandedGraf benitez">“It’s not about me anymore,” she said. “It’s about who I can empower and bring up with me so that they can also find their voice and so that they can also feel heard and seen at work, at school and beyond.”</p>
+          <p class="expandButton benitez" onclick="benitezExpand()"><span class="pointer">Read more</span></p>
         </div>
       </div>
     </div>
     <script>
-      var collapsed = 1;
-      function yeungExpand(){
-        if (collapsed == 1){
-          document.getElementById('yeungHeadshot').style.opacity = "1";
-          document.getElementById('yeungExpand').innerHTML = '<span class="pointer">Read less</span>'
-          collapsed = 0;
+      var yeungCollapsed = 1;
+      var benitezCollapsed = 1;
 
+      function yeungExpand(){
+        if (yeungCollapsed == 1){
+          yeungCollapsed = 0;
+          benitezCollapsed = 1;
+
+          //Create variables for the for set of for loops to work with.
+          //For each of the loops, it encompasses and if/else statement so it should act on the correct profile while closing/making sure all the others are closed.
+          var headshot = document.getElementsByClassName("HSphoto");
+          var exButton = document.getElementsByClassName("expandButton");
           var expand = document.getElementsByClassName("expandedGraf");
           var collapse = document.getElementsByClassName("collapsed");
           var background = document.getElementsByClassName("profileContainer");
           var i;
+
+          //Makes the headshot photo appear over the illustration
+          for (i = 0; i < headshot.length; i++){
+            if (headshot[i].classList.contains('yeung')){
+              headshot[i].style.opacity = "1";
+            } else {
+              headshot[i].style.opacity = "0";
+            }
+          }
+          //document.getElementById('yeungHeadshot').style.opacity = "1";
+
+          //Makes the "read more" button say "read less"
+          for (i = 0; i < exButton.length; i++){
+            if (exButton[i].classList.contains('yeung')){
+              exButton[i].innerHTML = '<span class="pointer">Read less</span>';
+            } else {
+              exButton[i].innerHTML = '<span class="pointer">Read more</span>';
+            }
+          }
+
+          //Makes the additional grafs appear
           for (i = 0; i < expand.length; i++){
             if (expand[i].classList.contains('yeung')){
               expand[i].style.display = "block";
+            } else {
+              expand[i].style.display = "none";
             }
           }
 
+          //Makes the ellipsis disappear
           for (i = 0; i < collapse.length; i++){
             if (collapse[i].classList.contains('yeung')){
               collapse[i].style.opacity = "0";
+            } else {
+              collapse[i].style.opacity = "1";
             }
           }
 
+          //Makes the background grey and draws the border
           for (i = 0; i < background.length; i++){
             if (background[i].classList.contains('yeung')){
               background[i].style.backgroundColor = "#f1f1f1";
               background[i].style.border = "5px solid #888888";
-              if (background[i].style.maxHeight){
-                background[i].style.maxHeight = null;
-              } else {
-                background[i].style.maxHeight = background[i].scrollHeight + "px";
-              }
+            } else {
+              background[i].style.backgroundColor = "transparent";
+              background[i].style.border = "5px solid rgba(0, 0, 0, 0)";
             }
           }
         } else {
-          document.getElementById('yeungHeadshot').style.opacity = "0";
-          document.getElementById('yeungExpand').innerHTML = '<span class="pointer">Read more</span>'
+          yeungCollapsed = 1;
 
-          collapsed = 1;
-
+          //Create variables for the for set of for loops to work with.
+          //For each of the loops, the if statement has no else clause because I'm figuring that clicking the collapse button should only apply to the one that is active (which is the only open one).
+          var headshot = document.getElementsByClassName("headshot");
+          var exButton = document.getElementsByClassName("expandButton");
           var expand = document.getElementsByClassName("expandedGraf");
           var collapse = document.getElementsByClassName("collapsed");
           var background = document.getElementsByClassName("profileContainer");
           var i;
+
+          //Makes the headshot photo disappear
+          for (i = 0; i < headshot.length; i++){
+            if (headshot[i].classList.contains('yeung')){
+              headshot[i].style.opacity = "0";
+            }
+          }
+
+          //Makes the "read more" button say "read less"
+          for (i = 0; i < exButton.length; i++){
+            if (exButton[i].classList.contains('yeung')){
+              exButton[i].innerHTML = '<span class="pointer">Read more</span>';
+            }
+          }
+
+          //Makes the additional grafs disappear
           for (i = 0; i < expand.length; i++){
             if (expand[i].classList.contains('yeung')){
               expand[i].style.display = "none";
             }
           }
 
+          //Makes the ellipsis appear
           for (i = 0; i < collapse.length; i++){
             if (collapse[i].classList.contains('yeung')){
               collapse[i].style.opacity = "1";
             }
           }
 
+          //Makes the background white and makes the border disappear
           for (i = 0; i < background.length; i++){
             if (background[i].classList.contains('yeung')){
               background[i].style.backgroundColor = "transparent";
               background[i].style.border = "5px solid rgba(0, 0, 0, 0)";
-              if (background[i].style.maxHeight){
-                background[i].style.maxHeight = null;
-              } else {
-                background[i].style.maxHeight = background[i].scrollHeight + "px";
-              }
+            }
+          }
+        }
+      }
+
+      function benitezExpand(){
+        if (benitezCollapsed == 1){
+          benitezCollapsed = 0;
+          yeungCollapsed = 1;
+
+          //Create variables for the for set of for loops to work with.
+          //For each of the loops, it encompasses and if/else statement so it should act on the correct profile while closing/making sure all the others are closed.
+          var headshot = document.getElementsByClassName("HSphoto");
+          var exButton = document.getElementsByClassName("expandButton");
+          var expand = document.getElementsByClassName("expandedGraf");
+          var collapse = document.getElementsByClassName("collapsed");
+          var background = document.getElementsByClassName("profileContainer");
+          var i;
+
+          //Makes the headshot photo appear over the illustration
+          for (i = 0; i < headshot.length; i++){
+            if (headshot[i].classList.contains('benitez')){
+              headshot[i].style.opacity = "1";
+            } else {
+              headshot[i].style.opacity = "0";
+            }
+          }
+
+          //Makes the "read more" button say "read less"
+          for (i = 0; i < exButton.length; i++){
+            if (exButton[i].classList.contains('benitez')){
+              exButton[i].innerHTML = '<span class="pointer">Read less</span>';
+            } else {
+              exButton[i].innerHTML = '<span class="pointer">Read more</span>';
+            }
+          }
+
+          //Makes the additional grafs appear
+          for (i = 0; i < expand.length; i++){
+            if (expand[i].classList.contains('benitez')){
+              expand[i].style.display = "block";
+            } else {
+              expand[i].style.display = "none";
+            }
+          }
+
+          //Makes the ellipsis disappear
+          for (i = 0; i < collapse.length; i++){
+            if (collapse[i].classList.contains('benitez')){
+              collapse[i].style.opacity = "0";
+            } else {
+              collapse[i].style.opacity = "1";
+            }
+          }
+
+          //Makes the background grey and draws the border
+          for (i = 0; i < background.length; i++){
+            if (background[i].classList.contains('benitez')){
+              background[i].style.backgroundColor = "#f1f1f1";
+              background[i].style.border = "5px solid #888888";
+            } else {
+              background[i].style.backgroundColor = "transparent";
+              background[i].style.border = "5px solid rgba(0, 0, 0, 0)";
+            }
+          }
+        } else {
+          benitezCollapsed = 1;
+
+          //Create variables for the for set of for loops to work with.
+          //For each of the loops, the if statement has no else clause because I'm figuring that clicking the collapse button should only apply to the one that is active (which is the only open one).
+          var headshot = document.getElementsByClassName("HSphoto");
+          var exButton = document.getElementsByClassName("expandButton");
+          var expand = document.getElementsByClassName("expandedGraf");
+          var collapse = document.getElementsByClassName("collapsed");
+          var background = document.getElementsByClassName("profileContainer");
+          var i;
+
+          //Makes the headshot photo disappear
+          for (i = 0; i < headshot.length; i++){
+            if (headshot[i].classList.contains('benitez')){
+              headshot[i].style.opacity = "0";
+            }
+          }
+
+          //Makes the "read more" button say "read less"
+          for (i = 0; i < exButton.length; i++){
+            if (exButton[i].classList.contains('benitez')){
+              exButton[i].innerHTML = '<span class="pointer">Read more</span>';
+            }
+          }
+
+          //Makes the additional grafs disappear
+          for (i = 0; i < expand.length; i++){
+            if (expand[i].classList.contains('benitez')){
+              expand[i].style.display = "none";
+            }
+          }
+
+          //Makes the ellipsis appear
+          for (i = 0; i < collapse.length; i++){
+            if (collapse[i].classList.contains('benitez')){
+              collapse[i].style.opacity = "1";
+            }
+          }
+
+          //Makes the background white and makes the border disappear
+          for (i = 0; i < background.length; i++){
+            if (background[i].classList.contains('benitez')){
+              background[i].style.backgroundColor = "transparent";
+              background[i].style.border = "5px solid rgba(0, 0, 0, 0)";
             }
           }
         }
