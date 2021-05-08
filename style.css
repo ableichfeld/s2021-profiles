@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Source+Serif+Pro:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600&family=Gilda+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700;&family=Source+Serif+Pro:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600&family=Gilda+Display&family=Source+Serif+Pro:ital,wght@0,400;1,400;1,700&display=swap');
 
 body{
   margin: 0;
@@ -81,6 +81,47 @@ a{
 
 iframe{
   margin-bottom: 20px;
+}
+
+.blockQuote{
+  box-sizing: border-box;
+  background-color: #f1f1f1;
+  border: 5px solid #888888;
+  height: 20.5vw;
+  width: 20.5vw;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.blockQuoteLeft{
+  margin-right: 30px;
+}
+
+.blockQuoteRight{
+  margin-left: 30px;
+}
+
+.blockQuote > p:first-child::first-letter{
+  color: #888888;
+  font-size: 175px;
+  line-height: 140px;
+  text-shadow: #aaa 2px 3px 3px;
+  float: left;
+}
+
+.blockQuote > p{
+  font-size: 1.5vw;
+  line-height: 1.75vw;
+}
+
+.blockQuoteCredit{
+  text-align: right;
+  font-size: 1.25em;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .expandButton{
