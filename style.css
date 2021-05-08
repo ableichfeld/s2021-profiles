@@ -194,4 +194,29 @@ iframe{
     width: 50vw;
     height: 50vw;
   }
+
+  .illustrLeft{
+    margin-right: 30px;
+    margin-left: 0px;
+  }
+
+  .illustrRight{
+    margin-right: 30px;
+    margin-left: 0px;
+  }
+
+  .photoLeft{
+    position: absolute;
+    left: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  .photoRight{
+    position: absolute;
+    left: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
 }
