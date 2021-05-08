@@ -65,6 +65,7 @@ p{
 
 a{
   color: #b12d27;
+  text-decoration: none;
 }
 
 iframe{
@@ -120,4 +121,25 @@ iframe{
   line-height: 20px;
   margin: 5px 10px 10px;
   display: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .profileContainer{
+    flex-direction: column;
+  }
+
+  .profileContainer .left{
+    flex-direction: column-reverse;
+  }
+
+  iframe{
+    width: 85vw;
+    height: auto;
+  }
+
+  .headshot{
+    width: 50vw;
+    height: 50vw;
+  }
 }
