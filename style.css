@@ -3,6 +3,7 @@
 
 body{
   margin: 0;
+  font-size: 12px;
 }
 
 .profileContainer{
@@ -173,6 +174,14 @@ iframe{
   line-height: 20px;
   margin: 5px 10px 10px;
   display: none;
+}
+
+.correction{
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1.5em;
+  margin: 0;
+  padding-bottom: 15px;
+  font-style: italic;
 }
 
 
